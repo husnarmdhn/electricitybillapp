@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:fillViewport="true"
+    android:background="@drawable/bg_gradient"
+    tools:context=".UpdateBillActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Back Button -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/back_button"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_back"
+            android:tint="#FF3D7F"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Menu Button -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/menu_button"
+            android:layout_width="34dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_menu"
+            android:tint="#FF3D7F"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="Update Bill Details"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Month Dropdown -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/monthInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:hint="Select Month"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleText"
+            app:shapeAppearanceOverlay="@style/RoundedTextInputLayout"
+            app:boxStrokeColor="#FF3D7F"
+            app:endIconMode="dropdown_menu">
+
+            <AutoCompleteTextView
+                android:id="@+id/monthEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:minHeight="60dp"
+                android:inputType="none"
+                android:textSize="16sp"
+                android:padding="16dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Units Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/unitsInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:hint="Units Consumed (kWh)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/monthInputLayout"
+            app:shapeAppearanceOverlay="@style/RoundedTextInputLayout"
+            app:boxStrokeColor="#FF3D7F">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unitsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:inputType="number"
+                android:textSize="16sp"
+                android:padding="16dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Rebate Selection -->
+        <TextView
+            android:id="@+id/rebateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Rebate Percentage:"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unitsInputLayout" />
+
+        <RadioGroup
+            android:id="@+id/rebateRadioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rebateLabel">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rebate0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0%"
+                android:textColor="#000000"
+                app:buttonTint="#FF3D7F" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rebate1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1%"
+                android:textColor="#000000"
+                app:buttonTint="#FF3D7F" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rebate2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2%"
+                android:textColor="#000000"
+                app:buttonTint="#FF3D7F" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rebate3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3%"
+                android:textColor="#000000"
+                app:buttonTint="#FF3D7F" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rebate4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4%"
+                android:textColor="#000000"
+                app:buttonTint="#FF3D7F" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rebate5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5%"
+                android:textColor="#000000"
+                app:buttonTint="#FF3D7F" />
+        </RadioGroup>
+
+        <!-- Button Group -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rebateRadioGroup">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/calculateButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="12dp"
+                android:text="Calculate Bill"
+                android:textAllCaps="false"
+                android:textColor="#FF3D7F"
+                android:textSize="18sp"
+                app:cornerRadius="28dp"
+                app:strokeColor="#FF3D7F"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Update Bill Record"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:backgroundTint="#FF3D7F"
+                app:cornerRadius="28dp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "899761738742",
+    "project_id": "electricitybillappps",
+    "storage_bucket": "electricitybillappps.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899761738742:android:5a8898fd65eb67f87e6dd7",
+        "android_client_info": {
+          "package_name": "com.example.electricitybillapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSSp3aBluiE8B71kgsk6aCTIqLbCcfiWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
